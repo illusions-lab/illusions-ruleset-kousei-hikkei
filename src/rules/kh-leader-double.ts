@@ -1,13 +1,16 @@
 /**
- * kh-leader-double — 三点リーダーは偶数個（2の倍数）で使う
+ * kh-leader-double — 三点リーダーは偶数個（2の倍数）で使う（小説・公用文）
  *
- * 校正実務の慣行として、三点リーダー「…」（U+2026）は「……」（2個）を
- * 一組として使う。1個（奇数個）のみの使用は誤りとみなす。
+ * 小説・公用文などの本文中では「……」（2個をひと組）が標準の校正実務慣行。
+ * 標準 校正必携 第8版（組方原則および調整・区切り約物）に基づき
+ * 二倍（2個）を単位として扱う。
+ *
+ * 数式文脈では単独使用の例もあるため、severity は info とし断定しない。
  *
  * 偽陽性回避:
  *   - 偶数個（2, 4, 6 …）は正しいので除外。
  *   - 1個、3個、5個 … の奇数個のみを検出する。
- *   - lookahead で「次が … でない」、lookbehind で「前が … でない」位置を特定。
+ *   - applicableModes は novel/official のみ（数式用途を排除）。
  */
 import type {
   LintIssue,
@@ -44,8 +47,8 @@ export function createKhLeaderDouble(ctx: RulesetContext, manifest: RulesetManif
           issues.push({
             ruleId: this.id,
             severity: config.severity,
-            message: `Use an even number of … (found ${run.length}): suggest "${suggested}"`,
-            messageJa: `標準 校正必携 第8版に基づき、三点リーダー「…」は偶数個（「${suggested}」など）でひと組として使います（現在${run.length}個）。`,
+            message: `Odd count of … (found ${run.length}): small-novel convention uses pairs — suggest "${suggested}"`,
+            messageJa: `標準 校正必携 第8版に基づき、小説・公用文では三点リーダー「…」は偶数個（「${suggested}」など）でひと組として使うのが標準です（現在${run.length}個）。数式・索引など記号用途では単独使用も許容されます。`,
             from: m.index,
             to: m.index + run.length,
             originalText: run,

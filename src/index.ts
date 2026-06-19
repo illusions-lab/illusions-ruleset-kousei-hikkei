@@ -15,9 +15,7 @@ import { createKhKurikaeshiKanji2 } from "./rules/kh-kurikaeshi-kanji-2";
 import { createKhKurikaeshiKanaIchi } from "./rules/kh-kurikaeshi-kana-ichi";
 import { createKhExclaimKuten } from "./rules/kh-exclaim-kuten";
 import { createKhDoubleKuten } from "./rules/kh-double-kuten";
-import { createKhTripleTouten } from "./rules/kh-triple-touten";
 import { createKhWaveDashDouble } from "./rules/kh-wave-dash-double";
-import { createKhMixedFwHwBracket } from "./rules/kh-mixed-fw-hw-bracket";
 import { createKhNakaguroDouble } from "./rules/kh-nakaguro-double";
 
 const manifest = manifestJson as RulesetModule["manifest"];
@@ -32,9 +30,7 @@ const ruleset: RulesetModule = {
       createKhKurikaeshiKanaIchi(ctx, manifest),
       createKhExclaimKuten(ctx, manifest),
       createKhDoubleKuten(ctx, manifest),
-      createKhTripleTouten(ctx, manifest),
       createKhWaveDashDouble(ctx, manifest),
-      createKhMixedFwHwBracket(ctx, manifest),
       createKhNakaguroDouble(ctx, manifest),
     ];
   },

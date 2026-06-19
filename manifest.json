@@ -21,12 +21,12 @@
   "rules": [
     {
       "ruleId": "kh-leader-double",
-      "nameJa": "三点リーダーは偶数個（2の倍数）で使う",
-      "descriptionJa": "三点リーダー「…」は1個（奇数個）で使わず、必ず2個（偶数個）をひと組として使います。",
+      "nameJa": "三点リーダーは偶数個（2の倍数）で使う（小説・公用文）",
+      "descriptionJa": "小説・公用文などの本文中で三点リーダー「…」を使う場合、「……」（2個をひと組）が標準の校正実務慣行です。ただし数式・索引など記号的用途の単独「…」は対象外です。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": { "enabled": true, "severity": "info" },
+      "applicableModes": ["novel", "official"],
       "docs": {
         "positiveExample": "彼は黙って去っていった……。",
         "negativeExample": "彼は黙って去っていった…。",
@@ -35,16 +35,16 @@
     },
     {
       "ruleId": "kh-dash-double",
-      "nameJa": "全角ダーシは2個続けて使う",
-      "descriptionJa": "文中の区切りや言いさしに全角ダーシ「—」を1個だけ使うのは誤りです。必ず「——」（2個）でひと組とします。",
+      "nameJa": "全角ダーシは2個続けて使う（小説・公用文）",
+      "descriptionJa": "小説・公用文などで区切りや言いさしに全角ダーシ「—」を使う場合、「——」（2個をひと組）が標準の校正実務慣行です。数の幅を示す場合も同様に2個をひと組として用います。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": { "enabled": true, "severity": "info" },
+      "applicableModes": ["novel", "official"],
       "docs": {
         "positiveExample": "東京——そこが彼女の故郷だった。",
         "negativeExample": "東京—そこが彼女の故郷だった。",
-        "sourceReference": "標準 校正必携 第8版（日本エディタースクール）組方原則および調整・区切り約物"
+        "sourceReference": "標準 校正必携 第8版（日本エディタースクール）組方原則および調整・区切り約物、縦組の数詞表記の基準"
       }
     },
     {
@@ -63,11 +63,11 @@
     },
     {
       "ruleId": "kh-kurikaeshi-kana-ichi",
-      "nameJa": "かな一つ点「ゝ」の誤用（2語以上のかなの繰り返しに不可）",
-      "descriptionJa": "かな書きの「ゝ」（一つ点）は1語の中で同音を繰り返すときにのみ使います。2語以上にわたる繰り返しに用いるのは誤りです。",
+      "nameJa": "かな一つ点「ゝ」「ヽ」の使用（現代文では避けることを推奨）",
+      "descriptionJa": "かな書きの「ゝ」（一つ点）・「ヽ」（片仮名一つ点）は、現代文では「々」以外のくり返し符号と同様に、できるだけ使わないことが望ましいとされます（1950年文部省刊行物表記の基準）。用いる場合は語内で同音を繰り返す場合のみ（正用例: かわいゝ）で、語をまたいだ使用は誤りです。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
+      "defaultConfig": { "enabled": true, "severity": "info" },
       "applicableModes": ["novel", "official", "blog", "academic", "sns"],
       "docs": {
         "positiveExample": "かわいい子。",
@@ -78,7 +78,7 @@
     {
       "ruleId": "kh-exclaim-kuten",
       "nameJa": "感嘆符・疑問符の直後に句点は不要",
-      "descriptionJa": "「！」「？」の直後に句点「。」を重ねるのは誤りです。感嘆符・疑問符が文末機能を兼ねるため、句点は不要です。",
+      "descriptionJa": "「！」「？」の直後に句点「。」を重ねるのは不要です。感嘆符・疑問符はそれ自体が文末を表す機能を持つため、直後の「。」は削除します。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": { "enabled": true, "severity": "warning" },
@@ -92,7 +92,7 @@
     {
       "ruleId": "kh-double-kuten",
       "nameJa": "句点の重複（「。。」）",
-      "descriptionJa": "句点「。」が2個以上連続するのは誤りです。",
+      "descriptionJa": "句点「。」が2個以上連続するのは校正実務上の誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": { "enabled": true, "severity": "warning" },
@@ -104,23 +104,9 @@
       }
     },
     {
-      "ruleId": "kh-triple-touten",
-      "nameJa": "読点の過多（3個以上の連続）",
-      "descriptionJa": "読点「、」が3個以上続く場合は、文の構造を見直すことを推奨します。",
-      "guidelineId": "kousei-hikkei-8",
-      "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
-      "docs": {
-        "positiveExample": "春が来て、花が咲き、鳥が鳴いた。",
-        "negativeExample": "A、、、B。",
-        "sourceReference": "標準 校正必携 第8版（日本エディタースクール）組方原則および調整・句読点"
-      }
-    },
-    {
       "ruleId": "kh-wave-dash-double",
       "nameJa": "波ダーシ「〜」の重複",
-      "descriptionJa": "範囲・程度を示す波ダーシ「〜」は1個で使います。「〜〜」と2個続けるのは誤りです。",
+      "descriptionJa": "範囲・程度を示す波ダーシ「〜」は1個で使います。「〜〜」と2個続けるのは誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": { "enabled": true, "severity": "warning" },
@@ -132,23 +118,9 @@
       }
     },
     {
-      "ruleId": "kh-mixed-fw-hw-bracket",
-      "nameJa": "全角括弧と半角括弧の混在",
-      "descriptionJa": "開き括弧が全角（（）なのに閉じ括弧が半角（)）（またはその逆）になっている場合は統一が必要です。",
-      "guidelineId": "kousei-hikkei-8",
-      "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
-      "docs": {
-        "positiveExample": "文章（補足）が続く。",
-        "negativeExample": "文章（補足)が続く。",
-        "sourceReference": "標準 校正必携 第8版（日本エディタースクール）組方原則および調整・括弧類"
-      }
-    },
-    {
       "ruleId": "kh-nakaguro-double",
       "nameJa": "中黒「・」の重複",
-      "descriptionJa": "並列の中黒「・」が2個以上連続するのは誤りです。",
+      "descriptionJa": "並列の中黒「・」が2個以上連続するのは誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": { "enabled": true, "severity": "warning" },

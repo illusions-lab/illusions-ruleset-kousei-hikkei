@@ -262,40 +262,6 @@ describe("kh-double-kuten — 句点の重複", () => {
 });
 
 // ---------------------------------------------------------------------------
-// kh-triple-touten
-// ---------------------------------------------------------------------------
-describe("kh-triple-touten — 読点3個以上の連続", () => {
-  const rule = () =>
-    ruleset.createRules(createTestContext()).find((r) => r.id === "kh-triple-touten")!;
-
-  describe("detections", () => {
-    it("flags 、、、 (3 consecutive)", () => {
-      const issues = rule().lint("A、、、B。", CONFIG);
-      expect(issues).toHaveLength(1);
-    });
-
-    it("flags 、、、、 (4 consecutive)", () => {
-      expect(rule().lint("A、、、、B", CONFIG).length).toBeGreaterThan(0);
-    });
-  });
-
-  describe("false positives (2個以内連続 → スルー)", () => {
-    const clean = ["春が来て、花が咲き、鳥が鳴いた。", "彼は、静かに去った。", "A、B。"];
-    for (const text of clean) {
-      it(`leaves "${text}" untouched`, () => {
-        expect(rule().lint(text, CONFIG)).toHaveLength(0);
-      });
-    }
-  });
-
-  describe("behavior", () => {
-    it("does nothing when disabled", () => {
-      expect(rule().lint("A、、、B", { ...CONFIG, enabled: false })).toHaveLength(0);
-    });
-  });
-});
-
-// ---------------------------------------------------------------------------
 // kh-wave-dash-double
 // ---------------------------------------------------------------------------
 describe("kh-wave-dash-double — 波ダーシの重複", () => {
@@ -326,48 +292,6 @@ describe("kh-wave-dash-double — 波ダーシの重複", () => {
   describe("behavior", () => {
     it("does nothing when disabled", () => {
       expect(rule().lint("東京〜〜大阪", { ...CONFIG, enabled: false })).toHaveLength(0);
-    });
-  });
-});
-
-// ---------------------------------------------------------------------------
-// kh-mixed-fw-hw-bracket
-// ---------------------------------------------------------------------------
-describe("kh-mixed-fw-hw-bracket — 全角・半角括弧の混在", () => {
-  const rule = () =>
-    ruleset.createRules(createTestContext()).find((r) => r.id === "kh-mixed-fw-hw-bracket")!;
-
-  describe("detections", () => {
-    it("flags full-width open + half-width close", () => {
-      const issues = rule().lint("文章（補足)が続く。", CONFIG);
-      expect(issues.length).toBeGreaterThan(0);
-      expect(issues[0].fix?.replacement).toBe("（補足）");
-    });
-
-    it("flags half-width open + full-width close", () => {
-      const issues = rule().lint("文章(補足）が続く。", CONFIG);
-      expect(issues.length).toBeGreaterThan(0);
-      expect(issues[0].fix?.replacement).toBe("(補足)");
-    });
-  });
-
-  describe("false positives (統一された括弧 → スルー)", () => {
-    const clean = [
-      "文章（補足）が続く。",
-      "文章(note)が続く。",
-      "（東京）で開催。",
-      "(Tokyo) area.",
-    ];
-    for (const text of clean) {
-      it(`leaves "${text}" untouched`, () => {
-        expect(rule().lint(text, CONFIG)).toHaveLength(0);
-      });
-    }
-  });
-
-  describe("behavior", () => {
-    it("does nothing when disabled", () => {
-      expect(rule().lint("文章（補足)が続く。", { ...CONFIG, enabled: false })).toHaveLength(0);
     });
   });
 });
