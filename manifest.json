@@ -4,7 +4,7 @@
   "name": "Kousei Hikkei 8",
   "nameJa": "標準 校正必携 第8版",
   "publisherJa": "日本エディタースクール",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "engineApi": 1,
   "license": "MIT",
   "licenseUrl": "https://opensource.org/license/mit",
@@ -24,8 +24,8 @@
   "rules": [
     {
       "ruleId": "kh-leader-double",
-      "nameJa": "三点リーダーは偶数個（2の倍数）で使う（小説・公用文）",
-      "descriptionJa": "小説・公用文などの本文中で三点リーダー「…」を使う場合、「……」（2個をひと組）が標準の校正実務慣行です。ただし数式・索引など記号的用途の単独「…」は対象外です。",
+      "nameJa": "三点リーダーは偶数個（2の倍数）で使う（小説・公用文・学術）",
+      "descriptionJa": "小説・公用文・学術文書などの本文中で三点リーダー「…」を使う場合、「……」（2個をひと組）が標準の校正実務慣行です。ただし数式・索引など記号的用途の単独「…」は対象外です。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": {
@@ -34,7 +34,8 @@
       },
       "applicableModes": [
         "novel",
-        "official"
+        "official",
+        "academic"
       ],
       "docs": {
         "positiveExample": "彼は黙って去っていった……。",
@@ -44,8 +45,8 @@
     },
     {
       "ruleId": "kh-dash-double",
-      "nameJa": "全角ダーシは2個続けて使う（小説・公用文）",
-      "descriptionJa": "小説・公用文などで区切りや言いさしに全角ダーシ「—」を使う場合、「——」（2個をひと組）が標準の校正実務慣行です。数の幅を示す場合も同様に2個をひと組として用います。",
+      "nameJa": "全角ダーシは2個続けて使う（小説・公用文・学術）",
+      "descriptionJa": "小説・公用文・学術文書などで区切りや言いさしに全角ダーシ「—」を使う場合、「——」（2個をひと組）が標準の校正実務慣行です。数の幅を示す場合も同様に2個をひと組として用います。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
       "defaultConfig": {
@@ -54,7 +55,8 @@
       },
       "applicableModes": [
         "novel",
-        "official"
+        "official",
+        "academic"
       ],
       "docs": {
         "positiveExample": "東京——そこが彼女の故郷だった。",
