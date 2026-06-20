@@ -3,7 +3,7 @@
 - **ruleId**: `kh-kurikaeshi-kana-ichi`
 - **ガイドライン**: 標準 校正必携 (`kousei-hikkei-8`)
 - **レベル**: L1（正規表現）
-- **既定**: 有効 / severity = warning
+- **既定**: 有効 / severity = info
 - **適用モード**: 小説 / 公用文 / ブログ / 学術 / SNS
 
 ## 意図

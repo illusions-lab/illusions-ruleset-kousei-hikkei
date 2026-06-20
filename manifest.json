@@ -3,7 +3,8 @@
   "id": "com.illusions-lab.kousei-hikkei",
   "name": "Kousei Hikkei 8",
   "nameJa": "標準 校正必携 第8版",
-  "version": "0.2.0",
+  "publisherJa": "日本エディタースクール",
+  "version": "0.3.0",
   "engineApi": 1,
   "license": "MIT",
   "licenseUrl": "https://opensource.org/license/mit",
@@ -27,8 +28,14 @@
       "descriptionJa": "小説・公用文などの本文中で三点リーダー「…」を使う場合、「……」（2個をひと組）が標準の校正実務慣行です。ただし数式・索引など記号的用途の単独「…」は対象外です。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "info" },
-      "applicableModes": ["novel", "official"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "info"
+      },
+      "applicableModes": [
+        "novel",
+        "official"
+      ],
       "docs": {
         "positiveExample": "彼は黙って去っていった……。",
         "negativeExample": "彼は黙って去っていった…。",
@@ -41,8 +48,14 @@
       "descriptionJa": "小説・公用文などで区切りや言いさしに全角ダーシ「—」を使う場合、「——」（2個をひと組）が標準の校正実務慣行です。数の幅を示す場合も同様に2個をひと組として用います。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "info" },
-      "applicableModes": ["novel", "official"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "info"
+      },
+      "applicableModes": [
+        "novel",
+        "official"
+      ],
       "docs": {
         "positiveExample": "東京——そこが彼女の故郷だった。",
         "negativeExample": "東京—そこが彼女の故郷だった。",
@@ -55,8 +68,17 @@
       "descriptionJa": "同の字点「々」は漢字1字の繰り返しに使います。2字以上の漢語（民主主義、社会主義など）全体の繰り返しに「々」を続けるのは誤りです。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "warning"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "人々が集まった。国々の代表。",
         "negativeExample": "民主主義々を唱える。",
@@ -69,8 +91,17 @@
       "descriptionJa": "かな書きの「ゝ」（一つ点）・「ヽ」（片仮名一つ点）は、現代文では「々」以外のくり返し符号と同様に、できるだけ使わないことが望ましいとされます（1950年文部省刊行物表記の基準）。用いる場合は語内で同音を繰り返す場合のみ（正用例: かわいゝ）で、語をまたいだ使用は誤りです。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "info" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "info"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "かわいい子。",
         "negativeExample": "ことゝ同じ。",
@@ -83,8 +114,17 @@
       "descriptionJa": "「！」「？」の直後に句点「。」を重ねるのは不要です。感嘆符・疑問符はそれ自体が文末を表す機能を持つため、直後の「。」は削除します。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "warning"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "本当においしい！　またきます。",
         "negativeExample": "本当においしい！。またきます。",
@@ -97,8 +137,17 @@
       "descriptionJa": "句点「。」が2個以上連続するのは校正実務上の誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "warning"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "終わった。次に進む。",
         "negativeExample": "終わった。。次に進む。",
@@ -111,8 +160,17 @@
       "descriptionJa": "範囲・程度を示す波ダーシ「〜」は1個で使います。「〜〜」と2個続けるのは誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "warning"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "東京〜大阪間を移動した。",
         "negativeExample": "東京〜〜大阪間を移動した。",
@@ -125,8 +183,17 @@
       "descriptionJa": "並列の中黒「・」が2個以上連続するのは誤りです（入力ミス・タイポ）。",
       "guidelineId": "kousei-hikkei-8",
       "level": "L1",
-      "defaultConfig": { "enabled": true, "severity": "warning" },
-      "applicableModes": ["novel", "official", "blog", "academic", "sns"],
+      "defaultConfig": {
+        "enabled": true,
+        "severity": "warning"
+      },
+      "applicableModes": [
+        "novel",
+        "official",
+        "blog",
+        "academic",
+        "sns"
+      ],
       "docs": {
         "positiveExample": "東京・大阪・名古屋",
         "negativeExample": "東京・・大阪",
