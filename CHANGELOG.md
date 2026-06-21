@@ -15,8 +15,8 @@
 - `nameJa` および `descriptionJa` の対象モード記述を「小説・公用文・学術」に更新。
 - `package.json` の `name` をテンプレート残り (`illusions-ruleset-template`) から正式名称 (`illusions-ruleset-kousei-hikkei`) に修正。
 
-## [0.1.0] - 〔YYYY-MM-DD〕
+## [0.1.0] - 2026-06-19
 
 ### Added
 
-- 初版。`sample-fw-exclaim` ルールを追加。
+- 初版。リーダー/ダーシ偶数個・繰り返し符号・感嘆符後の句点・波ダッシュ/中黒重複など全 8 ルール（標準 校正必携 第8版 準拠）を実装。
